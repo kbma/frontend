@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Acceuil from "./components/Acceuil";
+import Contact from "./components/Contact.jsx";
+import Service from "./components/Service";
+import { useState } from "react";
 function App() {
+  const [isActive, setIsActive] = useState(false);
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/acceuil">Acceuil</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/service">service</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route
+            path="/acceuil"
+            element={<Acceuil />}
+          />
+
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+          <Route
+            path="/service"
+            element={<Service />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

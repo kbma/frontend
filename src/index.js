@@ -4,10 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App/>
+    {/* <UserInfo nom="Haddan" age="45"/>
+    <HelloWorld />
+    <GroupAdoPro/>
+    <DynamicComponent title="Titre1" content="Contenu 1" />
+    <DynamicComponent title ="Titre2" content="Contenu 2" /> */}
   </React.StrictMode>
 );
 
